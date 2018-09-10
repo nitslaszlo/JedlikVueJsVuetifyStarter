@@ -1,5 +1,15 @@
 <template>
   <v-app id="inspire">
+    <v-toolbar>
+    <v-toolbar-side-icon></v-toolbar-side-icon>
+    <v-toolbar-title>Title</v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn flat>Link One</v-btn>
+      <v-btn flat>Link Two</v-btn>
+      <v-btn flat>Link Three</v-btn>
+    </v-toolbar-items>
+  </v-toolbar>
     <v-form>
       <v-container>
         <v-layout row wrap>
@@ -80,20 +90,6 @@ import { Component, Vue } from "vue-property-decorator";
 
 @Component
 export default class App extends Vue {
-  items: object = [
-    {
-      src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
-    },
-    {
-      src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
-    },
-    {
-      src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
-    },
-    {
-      src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
-    }
-  ];
   private OnClick(művelet: string): void {
     if (művelet == "+") window.alert("Plussz");
   }
