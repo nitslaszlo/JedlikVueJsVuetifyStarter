@@ -31,33 +31,19 @@
           </v-flex>
   
           <v-flex xs12 sm6 md3 ld2 xl1>
-            <v-text-field
-              label="Box"
-              box
-            ></v-text-field>
+            <v-text-field label="Box" box></v-text-field>
           </v-flex>
   
           <v-flex xs12 sm6 md3 ld2 xl1>
-            <v-text-field
-              label="Box"
-              placeholder="Placeholder"
-              box
-            ></v-text-field>
+            <v-text-field label="Box" placeholder="Placeholder" box></v-text-field>
           </v-flex>
   
           <v-flex xs12 sm6 md3 ld2 xl1>
-            <v-text-field
-              label="Outline"
-              outline
-            ></v-text-field>
+            <v-text-field label="Outline" outline></v-text-field>
           </v-flex>
   
           <v-flex xs12 sm6 md3 ld2 xl1>
-            <v-text-field
-              label="Outline"
-              placeholder="Placeholder"
-              outline
-            ></v-text-field>
+            <v-text-field label="Outline" placeholder="Placeholder" outline></v-text-field>
           </v-flex>
 
           <v-flex xs12 sm6 md3 ld2 xl1>
@@ -67,13 +53,13 @@
             <v-btn color="info">Info</v-btn>
           </v-flex>
 
-          <v-flex xs12 sm12 md12 ld12 xl12>
+          <v-flex xs12 sm12 md12 ld12 xl6>
             <v-carousel>
               <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src"></v-carousel-item>
             </v-carousel>
           </v-flex>
 
-          <v-flex xs12 sm12 md12 ld12 xl12>
+          <v-flex xs12 sm12 md12 ld12 xl6>
             <v-data-table :headers="headers" :items="desserts" hide-actions class="elevation-1">
               <template slot="items" slot-scope="props">
                 <td>{{ props.item.name }}</td>
