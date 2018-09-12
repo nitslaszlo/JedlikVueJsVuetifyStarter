@@ -78,7 +78,7 @@
       </v-container>
     </v-form>
 
-    <v-footer class="pa-3">
+    <v-footer color="grey darken-1" dark>
       <v-spacer></v-spacer>
       <div>&copy; {{ new Date().getFullYear() }}</div>
     </v-footer>
@@ -99,15 +99,27 @@ interface iDesserts {
   iron: string;
 }
 
+interface iSources {
+  src: string;
+}
+
+interface iHeaders {
+  text: string;
+  align?: string;
+  sortable?: boolean;
+  value: string;
+}
+
 @Component
 export default class App extends Vue {
-  private items: object = [
+  private items: iSources[] = [
     { src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg" },
     { src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg" },
     { src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg" },
     { src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg" }
   ];
-  private headers: object = [
+
+  private headers: iHeaders[] = [
     {
       text: "Dessert (100g serving)",
       align: "left",
