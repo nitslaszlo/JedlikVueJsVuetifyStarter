@@ -1,15 +1,17 @@
 <template>
   <v-app id="inspire">
+
     <v-toolbar>
     <v-toolbar-side-icon></v-toolbar-side-icon>
-    <v-toolbar-title>Title</v-toolbar-title>
+    <v-toolbar-title>Jedlik Vuetify Starter</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>Link One</v-btn>
-      <v-btn flat>Link Two</v-btn>
-      <v-btn flat>Link Three</v-btn>
+      <v-btn flat v-on:click="OnClick('Link One')">Link One</v-btn>
+      <v-btn flat v-on:click="OnClick('Link Two')">Link Two</v-btn>
+      <v-btn flat  v-on:click="OnClick('Link Three')">Link Three</v-btn>
     </v-toolbar-items>
   </v-toolbar>
+
     <v-form>
       <v-container>
         <v-layout row wrap>
@@ -75,31 +77,35 @@
         </v-layout>
       </v-container>
     </v-form>
+
     <v-footer class="pa-3">
       <v-spacer></v-spacer>
       <div>&copy; {{ new Date().getFullYear() }}</div>
     </v-footer>
+
   </v-app>
 </template>
 
 <script  lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
+interface iDesserts {
+  value: boolean;
+  name: string;
+  calories: number;
+  fat: number;
+  carbs: number;
+  protein: number;
+  iron: string;
+}
+
 @Component
 export default class App extends Vue {
   private items: object = [
-    {
-      src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
-    },
-    {
-      src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
-    },
-    {
-      src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
-    },
-    {
-      src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
-    }
+    { src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg" },
+    { src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg" },
+    { src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg" },
+    { src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg" }
   ];
   private headers: object = [
     {
@@ -115,7 +121,7 @@ export default class App extends Vue {
     { text: "Iron (%)", value: "iron" }
   ];
 
-  private desserts: object = [
+  private desserts: iDesserts[] = [
     {
       value: false,
       name: "Frozen Yogurt",
@@ -209,7 +215,7 @@ export default class App extends Vue {
   ];
 
   private OnClick(művelet: string): void {
-    if (művelet == "+") window.alert("Plussz");
+    window.alert(művelet);
   }
 }
 </script>
