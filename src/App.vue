@@ -119,6 +119,7 @@ export default class App extends Vue {
   private slider: number = 45;
   private page: number = 3;
 
+  // eslint-disable-next-line
   private longText: string = "The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through.";
 
   private items2: string[] = ["Foo", "Bar", "Fizz", "Buzz"];
