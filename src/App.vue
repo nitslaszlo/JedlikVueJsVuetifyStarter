@@ -16,43 +16,44 @@
       <v-container>
         <v-layout row wrap>
   
-          <v-flex xs12 sm6 md3 ld2 xl1>
+          <v-flex xs12 sm6 md3 ld3 xl3>
             <v-text-field label="Regular"></v-text-field>
-          </v-flex>
-  
-          <v-flex xs12 sm6 md3 ld2 xl1>
             <v-text-field label="Regular" placeholder="Placeholder"></v-text-field>
-          </v-flex>
-  
-          <v-flex xs12 sm6 md3 ld2 xl1>
             <v-text-field label="Solo" solo></v-text-field>
-          </v-flex>
-  
-          <v-flex xs12 sm6 md3 ld2 xl1>
             <v-text-field label="Solo" placeholder="Placeholder" solo></v-text-field>
-          </v-flex>
-  
-          <v-flex xs12 sm6 md3 ld2 xl1>
             <v-text-field label="Box" box></v-text-field>
-          </v-flex>
-  
-          <v-flex xs12 sm6 md3 ld2 xl1>
             <v-text-field label="Box" placeholder="Placeholder" box></v-text-field>
-          </v-flex>
-  
-          <v-flex xs12 sm6 md3 ld2 xl1>
             <v-text-field label="Outline" outline></v-text-field>
-          </v-flex>
-  
-          <v-flex xs12 sm6 md3 ld2 xl1>
             <v-text-field label="Outline" placeholder="Placeholder" outline></v-text-field>
           </v-flex>
-
-          <v-flex xs12 sm6 md3 ld2 xl1>
+  
+  
+          <v-flex xs12 sm6 md3 ld3 xl3>
+            <v-textarea name="i71" label="Default style" v-model="longText" hint="Hint text"></v-textarea>
+            <v-textarea solo name="i74" label="Solo textarea" v-model="longText"></v-textarea>
+            <v-textarea box name="i75" label="Box textarea" v-model="longText"></v-textarea>
+            <v-textarea outline name="i76" label="Outline textarea" v-model="longtext"></v-textarea>
+          </v-flex>
+  
+          <v-flex xs12 sm6 md3 ld3 xl3>
             <v-btn color="success">Success</v-btn>
             <v-btn color="error">Error</v-btn>
             <v-btn color="warning">Warning</v-btn>
             <v-btn color="info">Info</v-btn>
+            <v-checkbox :label="`Checkbox 1: ${checkbox.toString()}`" v-model="checkbox"></v-checkbox>
+            <v-radio-group v-model="radioGroup">
+               <v-radio v-for="n in 3" :key="n" :label="`Radio ${n}`" :value="n"></v-radio>
+            </v-radio-group>
+            <v-switch :label="`Switch 1: ${switch1.toString()}`" v-model="switch1"></v-switch>
+            <v-select :items="items2" label="Standard"></v-select>
+            <v-select :items="items2" box label="Box style"></v-select>
+            <v-select :items="items2" label="Outline style" outline></v-select>
+            <v-select :items="items2" label="Solo field" solo></v-select>
+          </v-flex>
+
+          <v-flex xs12 sm6 md3 ld3 xl3>
+            <v-pagination v-model="page" :length="6"  ></v-pagination>
+            <v-slider v-model="slider" label="slider"></v-slider>
           </v-flex>
 
           <v-flex xs12 sm12 md12 ld12 xl6>
@@ -73,7 +74,7 @@
               </template>
             </v-data-table>
           </v-flex>
-
+  
         </v-layout>
       </v-container>
     </v-form>
@@ -112,6 +113,16 @@ interface iHeaders {
 
 @Component
 export default class App extends Vue {
+  private checkbox: boolean = true;
+  private radioGroup: number = 1;
+  private switch1: boolean = true;
+  private slider: number = 45;
+  private page: number = 3;
+
+  private longText: string = "The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through.";
+
+  private items2: string[] = ["Foo", "Bar", "Fizz", "Buzz"];
+
   private items: iSources[] = [
     { src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg" },
     { src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg" },
