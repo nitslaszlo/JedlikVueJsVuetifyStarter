@@ -42,28 +42,48 @@
             <v-btn color="info">Info</v-btn>
             <v-checkbox :label="`Checkbox 1: ${checkbox.toString()}`" v-model="checkbox"></v-checkbox>
             <v-radio-group v-model="radioGroup">
-               <v-radio v-for="n in 3" :key="n" :label="`Radio ${n}`" :value="n"></v-radio>
+               <v-radio v-for="n in 3" :key="n" v-bind:label="`Radio ${n}`" :value="n"></v-radio>
             </v-radio-group>
-            <v-switch :label="`Switch 1: ${switch1.toString()}`" v-model="switch1"></v-switch>
-            <v-select :items="items2" label="Standard"></v-select>
-            <v-select :items="items2" box label="Box style"></v-select>
-            <v-select :items="items2" label="Outline style" outline></v-select>
-            <v-select :items="items2" label="Solo field" solo></v-select>
+            <v-switch v-bind:label="`Switch 1: ${switch1.toString()}`" v-model="switch1"></v-switch>
+            <v-select v-bind:items="items2" label="Standard"></v-select>
+            <v-select v-bind:items="items2" box label="Box style"></v-select>
+            <v-select v-bind:items="items2" label="Outline style" outline></v-select>
+            <v-select v-bind:items="items2" label="Solo field" solo></v-select>
           </v-flex>
 
           <v-flex xs12 sm6 md3 ld3 xl3>
-            <v-pagination v-model="page" :length="6"  ></v-pagination>
+            <v-pagination v-model="page" v-bind:length="6"  ></v-pagination>
             <v-slider v-model="slider" label="slider"></v-slider>
+            <v-card>
+              <v-img
+                src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
+                aspect-ratio="2.75"
+              ></v-img>
+      
+              <v-card-title primary-title>
+                <div>
+                  <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
+                  <div>Located two hours south of Sydney in the <br>Southern Highlands of New South Wales, ...</div>
+                </div>
+              </v-card-title>
+      
+              <v-card-actions>
+                <v-btn flat color="orange">Share</v-btn>
+                <v-btn flat color="orange">Explore</v-btn>
+              </v-card-actions>
+            </v-card>
           </v-flex>
+
+          
 
           <v-flex xs12 sm12 md12 ld12 xl6>
             <v-carousel>
-              <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src"></v-carousel-item>
+              <v-carousel-item v-for="(item,i) in items" v-bind:key="i" v-bind:src="item.src"></v-carousel-item>
             </v-carousel>
           </v-flex>
 
           <v-flex xs12 sm12 md12 ld12 xl6>
-            <v-data-table :headers="headers" :items="desserts" hide-actions class="elevation-1">
+            <v-data-table :headers="headers" v-bind:items="desserts" hide-actions class="elevation-1">
               <template slot="items" slot-scope="props">
                 <td>{{ props.item.name }}</td>
                 <td class="text-xs-right">{{ props.item.calories }}</td>
