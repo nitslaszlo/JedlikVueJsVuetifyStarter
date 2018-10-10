@@ -32,7 +32,7 @@
             <v-textarea name="i71" label="Default style" v-model="longText" hint="Hint text"></v-textarea>
             <v-textarea solo name="i74" label="Solo textarea" v-model="longText"></v-textarea>
             <v-textarea box name="i75" label="Box textarea" v-model="longText"></v-textarea>
-            <v-textarea outline name="i76" label="Outline textarea" v-model="longtext"></v-textarea>
+            <v-textarea outline name="i76" label="Outline textarea" v-model="longText"></v-textarea>
           </v-flex>
   
           <v-flex xs12 sm6 md3 ld3 xl3>
