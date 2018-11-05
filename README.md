@@ -1,4 +1,4 @@
-# Vue.js + Typescript + Vuetify
+# Vue.js + Typescript + Vuetify + VueRourer
 
 ## netlify link:
 
