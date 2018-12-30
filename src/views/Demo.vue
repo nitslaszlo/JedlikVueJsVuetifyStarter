@@ -1,193 +1,84 @@
 <template>
   <v-app id="inspire">
     <v-toolbar>
-      <v-toolbar-side-icon />
+      <v-toolbar-side-icon/>
       <v-toolbar-title>Jedlik Vuetify Starter</v-toolbar-title>
-      <v-spacer />
+      <v-spacer/>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn
-          flat 
-          @click="OnClick('Link One')">Link One</v-btn>
-        <v-btn
-          flat
-          @click="OnClick('Link Two')">Link Two</v-btn>
-        <v-btn
-          flat
-          @click="OnClick('Link Three')">Link Three</v-btn>
+        <v-btn flat @click="OnClick('Link One')">Link One</v-btn>
+        <v-btn flat @click="OnClick('Link Two')">Link Two</v-btn>
+        <v-btn flat @click="OnClick('Link Three')">Link Three</v-btn>
       </v-toolbar-items>
     </v-toolbar>
 
     <v-form>
       <v-container>
-        <v-layout
-          row
-          wrap>
-          <v-flex
-            xs12
-            sm6
-            md3
-            ld3
-            xl3>
-            <v-text-field label="Regular" />
-            <v-text-field
-              label="Regular"
-              placeholder="Placeholder" />
-            <v-text-field 
-              label="Solo" 
-              solo />
-            <v-text-field 
-              label="Solo" 
-              placeholder="Placeholder" 
-              solo />
-            <v-text-field 
-              label="Box" 
-              box />
-            <v-text-field 
-              label="Box" 
-              placeholder="Placeholder" 
-              box />
-            <v-text-field 
-              label="Outline" 
-              outline />
-            <v-text-field 
-              label="Outline" 
-              placeholder="Placeholder" 
-              outline />
+        <v-layout row wrap>
+          <v-flex xs12 sm6 md3 ld3 xl3>
+            <v-text-field label="Regular"/>
+            <v-text-field label="Regular" placeholder="Placeholder"/>
+            <v-text-field label="Solo" solo/>
+            <v-text-field label="Solo" placeholder="Placeholder" solo/>
+            <v-text-field label="Box" box/>
+            <v-text-field label="Box" placeholder="Placeholder" box/>
+            <v-text-field label="Outline" outline/>
+            <v-text-field label="Outline" placeholder="Placeholder" outline/>
           </v-flex>
-  
-  
-          <v-flex 
-            xs12 
-            sm6 
-            md3 
-            ld3 
-            xl3>
-            <v-textarea 
-              v-model="longText" 
-              name="i71" 
-              label="Default style" 
-              hint="Hint text" />
-            <v-textarea 
-              v-model="longText" 
-              solo 
-              name="i74" 
-              label="Solo textarea" />
-            <v-textarea 
-              v-model="longText" 
-              box 
-              name="i75" 
-              label="Box textarea" />
-            <v-textarea 
-              v-model="longText" 
-              outline 
-              name="i76" 
-              label="Outline textarea" />
+
+          <v-flex xs12 sm6 md3 ld3 xl3>
+            <v-textarea v-model="longText" name="i71" label="Default style" hint="Hint text"/>
+            <v-textarea v-model="longText" solo name="i74" label="Solo textarea"/>
+            <v-textarea v-model="longText" box name="i75" label="Box textarea"/>
+            <v-textarea v-model="longText" outline name="i76" label="Outline textarea"/>
           </v-flex>
-  
-          <v-flex 
-            xs12 
-            sm6 
-            md3 
-            ld3 
-            xl3>
+
+          <v-flex xs12 sm6 md3 ld3 xl3>
             <v-btn color="success">Success</v-btn>
             <v-btn color="error">Error</v-btn>
             <v-btn color="warning">Warning</v-btn>
             <v-btn color="info">Info</v-btn>
-            <v-checkbox
-              v-model="checkbox"
-              :label="`Checkbox 1: ${checkbox.toString()}`" />
+            <v-checkbox v-model="checkbox" :label="`Checkbox 1: ${checkbox.toString()}`"/>
             <v-radio-group v-model="radioGroup">
-              <v-radio 
-                v-for="n in 3" 
-                :key="n" 
-                :label="`Radio ${n}`" 
-                :value="n" />
+              <v-radio v-for="n in 3" :key="n" :label="`Radio ${n}`" :value="n"/>
             </v-radio-group>
-            <v-switch 
-              v-model="switch1"
-              :label="`Switch 1: ${switch1.toString()}`" />
-            <v-select 
-              :items="items2" 
-              label="Standard" />
-            <v-select 
-              :items="items2" 
-              box 
-              label="Box style" />
-            <v-select 
-              :items="items2" 
-              label="Outline style" 
-              outline />
-            <v-select 
-              :items="items2" 
-              label="Solo field" 
-              solo />
+            <v-switch v-model="switch1" :label="`Switch 1: ${switch1.toString()}`"/>
+            <v-select :items="items2" label="Standard"/>
+            <v-select :items="items2" box label="Box style"/>
+            <v-select :items="items2" label="Outline style" outline/>
+            <v-select :items="items2" label="Solo field" solo/>
           </v-flex>
 
-          <v-flex 
-            xs12 
-            sm6 
-            md3 
-            ld3 
-            xl3>
-            <v-pagination 
-              v-model="page" 
-              :length="6" />
-            <v-slider 
-              v-model="slider" 
-              label="slider" />
+          <v-flex xs12 sm6 md3 ld3 xl3>
+            <v-pagination v-model="page" :length="6"/>
+            <v-slider v-model="slider" label="slider"/>
             <v-card>
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
-                aspect-ratio="2.75" />
-      
+              <v-img src="https://cdn.vuetifyjs.com/images/cards/desert.jpg" aspect-ratio="2.75"/>
+
               <v-card-title primary-title>
                 <div>
                   <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
-                  <div>Located two hours south of Sydney in the <br>Southern Highlands of New South Wales, ...</div>
+                  <div>Located two hours south of Sydney in the
+                    <br>Southern Highlands of New South Wales, ...
+                  </div>
                 </div>
               </v-card-title>
-      
+
               <v-card-actions>
-                <v-btn 
-                  flat 
-                  color="orange">
-                  Share</v-btn>
-                <v-btn 
-                  flat 
-                  color="orange">Explore</v-btn>
+                <v-btn flat color="orange">Share</v-btn>
+                <v-btn flat color="orange">Explore</v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
 
-          <v-flex 
-            xs12 
-            sm12 
-            md12 
-            ld12 
-            xl6>
+          <v-flex xs12 sm12 md12 ld12 xl6>
             <v-carousel>
-              <v-carousel-item 
-                v-for="(item,i) in items" 
-                :key="i" 
-                :src="item.src" />
+              <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src"/>
             </v-carousel>
           </v-flex>
 
-          <v-flex 
-            xs12 
-            sm12 
-            md12 
-            ld12 
-            xl6>
-            <v-data-table 
-              :headers="headers" 
-              :items="desserts" 
-              hide-actions 
-              class="elevation-1">
-              <template 
-                slot="items" 
-                slot-scope="props">
+          <v-flex xs12 sm12 md12 ld12 xl6>
+            <v-data-table :headers="headers" :items="desserts" hide-actions class="elevation-1">
+              <template slot="items" slot-scope="props">
                 <td>{{ props.item.name }}</td>
                 <td class="text-xs-right">{{ props.item.calories }}</td>
                 <td class="text-xs-right">{{ props.item.fat }}</td>
@@ -197,18 +88,14 @@
               </template>
             </v-data-table>
           </v-flex>
-  
         </v-layout>
       </v-container>
     </v-form>
 
-    <v-footer 
-      color="grey darken-1" 
-      dark>
-      <v-spacer />
+    <v-footer color="grey darken-1" dark>
+      <v-spacer/>
       <div>&copy; {{ new Date().getFullYear() }}</div>
     </v-footer>
-
   </v-app>
 </template>
 
