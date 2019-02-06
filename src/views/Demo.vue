@@ -5,9 +5,9 @@
       <v-toolbar-title>Jedlik Vuetify Starter</v-toolbar-title>
       <v-spacer/>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat @click="OnClick('Link One')">Link One</v-btn>
-        <v-btn flat @click="OnClick('Link Two')">Link Two</v-btn>
-        <v-btn flat @click="OnClick('Link Three')">Link Three</v-btn>
+        <v-btn flat @click="onClick('Link One')">Link One</v-btn>
+        <v-btn flat @click="onClick('Link Two')">Link Two</v-btn>
+        <v-btn flat @click="onClick('Link Three')">Link Three</v-btn>
       </v-toolbar-items>
     </v-toolbar>
 
@@ -251,7 +251,7 @@ export default class Demo extends Vue {
     }
   ];
 
-  private OnClick(művelet: string): void {
+  private onClick (művelet: string): void {
     window.alert(művelet);
   }
 }
