@@ -102,7 +102,7 @@
 <script  lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
-interface iDesserts {
+interface IDesserts {
   value: boolean;
   name: string;
   calories: number;
@@ -112,11 +112,11 @@ interface iDesserts {
   iron: string;
 }
 
-interface iSources {
+interface ISources {
   src: string;
 }
 
-interface iHeaders {
+interface IHeaders {
   text: string;
   align?: string;
   sortable?: boolean;
@@ -137,14 +137,14 @@ export default class Demo extends Vue {
 
   private items2: string[] = ["Foo", "Bar", "Fizz", "Buzz"];
 
-  private items: iSources[] = [
+  private items: ISources[] = [
     { src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg" },
     { src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg" },
     { src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg" },
     { src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg" }
   ];
 
-  private headers: iHeaders[] = [
+  private headers: IHeaders[] = [
     {
       text: "Dessert (100g serving)",
       align: "left",
@@ -158,7 +158,7 @@ export default class Demo extends Vue {
     { text: "Iron (%)", value: "iron" }
   ];
 
-  private desserts: iDesserts[] = [
+  private desserts: IDesserts[] = [
     {
       value: false,
       name: "Frozen Yogurt",
@@ -251,7 +251,7 @@ export default class Demo extends Vue {
     }
   ];
 
-  private onClick (művelet: string): void {
+  private onClick(művelet: string): void {
     window.alert(művelet);
   }
 }
